@@ -1,0 +1,5 @@
+{
+  "extends": "@vident-ui/tsconfig/react-library.json",
+  "include": [".", "tailwind.config.js", "../../postcss.config.ts"],
+  "exclude": ["dist", "build", "node_modules"]
+}

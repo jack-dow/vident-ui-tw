@@ -1,0 +1,21 @@
+{
+  "name": "@vident-ui/utils",
+  "version": "0.0.7",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "author": "Jack Dow",
+  "peerDependencies": {},
+  "dependencies": {},
+  "devDependencies": {
+    "@vident-ui/eslint-config": "workspace:*",
+    "@vident-ui/tsconfig": "workspace:*",
+    "tsup": "^5.10.1"
+  },
+  "scripts": {
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
+    "test": "jest",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  }
+}

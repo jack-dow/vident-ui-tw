@@ -1,0 +1,22 @@
+{
+  "name": "vident-ui",
+  "description": "This is an official React design system starter powered by Turborepo.",
+  "version": "0.0.7",
+  "author": "Jack Dow",
+  "license": "MIT",
+  "private": true,
+  "packageManager": "pnpm@6.30.0",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --no-cache --continue",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "prettier": "^2.5.1",
+    "turbo": "latest"
+  }
+}

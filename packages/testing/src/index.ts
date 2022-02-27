@@ -1,0 +1,16 @@
+export { checkAccessibility } from './check-accessibility';
+export { itSupportsInputProps } from './is-supports-input-props';
+export { itConnectsLabelAndInput } from './it-connects-label-and-input';
+export { itIsPolymorphic } from './it-is-polymorphic';
+export { itRendersChildren } from './it-renders-children';
+export { itSupportsClassName } from './it-supports-classname';
+export { itSupportsCss } from './it-supports-css';
+export { itSupportsFocusEvents } from './it-supports-focus-events';
+export { itSupportsInputIcons } from './it-supports-input-icons';
+export { itSupportsInputSections } from './it-supports-input-sections';
+export { itSupportsOthers } from './it-supports-others';
+export { itSupportsRef } from './it-supports-ref';
+export { itSupportsStyle } from './it-supports-style';
+export { itSupportsSystemProps } from './it-supports-system-props';
+export { itSupportsWrapperProps } from './it-supports-wrapper-props';
+// export { render, actAsync } from './render-with-act';

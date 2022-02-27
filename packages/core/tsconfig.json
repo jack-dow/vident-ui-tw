@@ -1,0 +1,10 @@
+{
+  "extends": "@vident-ui/tsconfig/react-library.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "paths": {
+      "@storybook/react": ["../storybook/node_modules/@storybook/react"]
+    }
+  }
+}

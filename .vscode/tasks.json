@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Create new @vident-ui/core boilerplate component files",
+      "command": "cd ./packages/core/src/components && mkdir ${input:dirName} && cd ${input:dirName} && touch 'index.ts' '${input:dirName}.tsx' '${input:dirName}.styles.ts' 'styles.api.ts' '${input:dirName}.test.tsx' '${input:dirName}.story.tsx'",
+      "type": "shell",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    }
+  ],
+
+  // ........................................................................................
+
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "dirName",
+      "description": "Complete my folder name",
+      "default": "Create new @vident-ui/core boilerplate component files"
+    }
+  ]
+}
