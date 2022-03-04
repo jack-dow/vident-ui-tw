@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { Box } from './index';
 
-storiesOf('@vident-ui/core/Box/stories', module).add('Box', () => {
+storiesOf('@vident-ui/core/Box', module).add('Box', () => {
   const ref = useRef(null);
   useEffect(() => {
     console.log(ref);

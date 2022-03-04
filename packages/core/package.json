@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.9.3",
+    "@radix-ui/react-label": "^0.1.5",
+    "@radix-ui/react-switch": "^0.1.5",
     "@vident-ui/hooks": "workspace:*",
     "react-popper": "^2.2.5",
     "react-textarea-autosize": "^8.3.3",

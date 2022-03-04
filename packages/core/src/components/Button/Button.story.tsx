@@ -40,7 +40,7 @@ const loading = (['xs', 'sm', 'md', 'lg', 'xl'] as ButtonSize[]).map((size, inde
   </Button>
 ));
 
-storiesOf('@vident-ui/core/Button/stories', module)
+storiesOf('@vident-ui/core/Button', module)
   .add('Variants', () => (
     <div className="space-y-4">
       <div className="space-x-4">{getVariants({})}</div>

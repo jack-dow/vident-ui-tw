@@ -2,6 +2,7 @@ const colors = require('tailwindcss/colors');
 
 module.exports = {
   content: ['../**/*.{ts,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {

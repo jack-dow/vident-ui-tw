@@ -1,3 +1,4 @@
+import type * as React from 'react';
 /* -------------------------------------------------------------------------------------------------
  * Basic Utilities
  * -----------------------------------------------------------------------------------------------*/
@@ -14,18 +15,6 @@ export type Function = (...args: any[]) => unknown;
 
 /** Returns an object from the given object assigned with the values of another given object. */
 export type Assign<T1 = {}, T2 = {}> = T1 extends any ? Omit<T1, keyof T2> & T2 : never;
-
-/** 
-Adds [key: string]: string | number | boolean to all nested objects entries.
-
-Useful for when you wish to keep autocomplete of object keys but also
-allow key values that are not defined at the same time as the object type
-*/
-export type AllowAnyObjectKeys<T> = {
-  [key in keyof Extract<T, object>]: {
-    [k in LiteralUnion<keyof Extract<T, object>[key], string | number>]: any;
-  };
-};
 
 /* -------------------------------------------------------------------------------------------------
  * Except Utility

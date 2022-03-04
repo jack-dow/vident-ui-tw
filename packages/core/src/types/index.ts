@@ -7,7 +7,6 @@ export type {
   NestedArray,
   Function,
   Assign,
-  AllowAnyObjectKeys,
   Except,
   IsEqual,
   LiteralUnion,

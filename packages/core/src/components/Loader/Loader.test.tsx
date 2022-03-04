@@ -1,5 +1,5 @@
 import React from 'react';
-import { itSupportsSystemProps } from '@vident-ui/utils';
+import { itSupportsSystemProps } from '@vident-ui/testing';
 import { render } from '@testing-library/react';
 import { Loader } from './Loader';
 
@@ -10,11 +10,5 @@ describe('@vident-ui/core/Loader', () => {
     component: Loader,
     props: defaultProps,
     displayName: '@vident-ui/core/Loader',
-  });
-
-  it('sets svg width based on size prop', () => {
-    const { container } = render(<Loader size={41} variant="bars" />);
-    const element = container.firstChild as HTMLElement;
-    expect(element.getAttribute('width')).toBe('41px');
   });
 });

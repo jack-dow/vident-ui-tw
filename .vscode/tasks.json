@@ -3,7 +3,7 @@
   "tasks": [
     {
       "label": "Create new @vident-ui/core boilerplate component files",
-      "command": "cd ./packages/core/src/components && mkdir ${input:dirName} && cd ${input:dirName} && touch 'index.ts' '${input:dirName}.tsx' '${input:dirName}.styles.ts' 'styles.api.ts' '${input:dirName}.test.tsx' '${input:dirName}.story.tsx'",
+      "command": "cd ./packages/core/src/components && mkdir ${input:dirName} && cd ${input:dirName} && touch 'index.ts' '${input:dirName}.tsx' '${input:dirName}.test.tsx' '${input:dirName}.story.tsx'",
       "type": "shell",
       "problemMatcher": [],
       "presentation": {
