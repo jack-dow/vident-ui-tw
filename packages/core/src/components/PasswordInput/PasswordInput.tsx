@@ -7,13 +7,15 @@ import { TextInput, TextInputProps } from '../TextInput';
 import { PasswordToggleIcon } from './PasswordToggleIcon';
 import type * as Vident from '../../types';
 
-export interface PasswordInputProps extends Omit<TextInputProps, 'classNames' | 'styles'> {
+export interface PasswordInputOwnProps {
   /** Toggle button tabIndex, set to 0 to make button focusable with tab key */
   toggleTabIndex?: -1 | 0;
 
   /** Provide your own visibility toggle icon */
   visibilityToggleIcon?: React.FC<{ reveal: boolean; size?: number }>;
 }
+
+export type PasswordInputProps = Vident.Merge<TextInputProps, PasswordInputOwnProps>;
 
 const buttonSizes = {
   xs: 22,
@@ -41,7 +43,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
       placeholder = 'Enter your password',
       size = 'md',
       visibilityToggleIcon: VisibilityToggleIcon = PasswordToggleIcon,
-      ...others
+      ...passwordInputProps
     }: PasswordInputProps,
     ref
   ) => {
@@ -49,6 +51,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
 
     return (
       <TextInput
+        {...passwordInputProps}
         label={label}
         type={passwordShowing ? 'text' : 'password'}
         autoComplete={autoComplete}
@@ -57,7 +60,6 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
         disabled={disabled}
         size={size}
         rightIconClickable
-        {...others}
         rightIcon={
           !disabled && (
             <ActionIcon

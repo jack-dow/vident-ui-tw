@@ -39,9 +39,6 @@ export interface InputOwnProps {
   /** Properties spread to root element */
   wrapperProps?: { [key: string]: any };
 
-  /** Sets aria-required=true on input element */
-  required?: boolean;
-
   /** Defines input appearance, defaults to default in light color scheme and filled in dark */
   variant?: InputVariant;
 
@@ -50,9 +47,6 @@ export interface InputOwnProps {
 
   /** Controls Input size (padding & font-size) */
   size?: InputSize;
-
-  /** Sets aria-disabled=true on input element and applies disabled styles */
-  disabled?: boolean;
 }
 export type InputProps = React.ComponentProps<typeof Input>;
 

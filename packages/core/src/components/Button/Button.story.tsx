@@ -45,24 +45,22 @@ storiesOf('@vident-ui/core/Button', module)
     <div className="space-y-4">
       <div className="space-x-4">{getVariants({})}</div>
       <div className="space-x-4">{getVariants({ variant: 'secondary' })}</div>
-      <div className="space-x-4">{getVariants({ variant: 'white' })}</div>
+      <div className="space-x-4">{getVariants({ variant: 'default' })}</div>
     </div>
   ))
   .add('As link', () => (
     <div className="space-y-4">
       <div className="space-x-4">{getLinkVariants({})}</div>
       <div className="space-x-4">{getLinkVariants({ variant: 'secondary' })}</div>
-      <div className="space-x-4">{getLinkVariants({ variant: 'white' })}</div>
+      <div className="space-x-4">{getLinkVariants({ variant: 'default' })}</div>
     </div>
   ))
   .add('Icons', () => (
     <div className="space-y-4">
-      <div className="space-x-4">
-        {getVariants({ leftIcon: <CalendarIcon className="mr-2 w-5" /> })}
-      </div>
+      <div className="space-x-4">{getVariants({ leftIcon: <CalendarIcon className="w-5" /> })}</div>
       <div className="space-x-4">
         {getLinkVariants({
-          rightIcon: <ExternalLinkIcon className="ml-2 w-5" />,
+          rightIcon: <ExternalLinkIcon className="w-5" />,
           variant: 'secondary',
         })}
       </div>
@@ -70,19 +68,19 @@ storiesOf('@vident-ui/core/Button', module)
       <div className="space-x-4">
         {getVariants({
           variant: 'primary',
-          leftIcon: <CalendarIcon className="mr-2 w-5" />,
-          rightIcon: <ExternalLinkIcon className="ml-2 w-5" />,
+          leftIcon: <CalendarIcon className="w-5" />,
+          rightIcon: <ExternalLinkIcon className="w-5" />,
         })}
       </div>
     </div>
   ))
   .add('Sizes', () => <div className="space-x-4">{sizes}</div>)
   .add('Disabled', () => (
-    <>
-      <div className="my-4 space-x-4">{getVariants({ disabled: true })}</div>
-      <div className="my-4 space-x-4">{getVariants({ variant: 'secondary', disabled: true })}</div>
-      <div className="my-4 space-x-4">{getVariants({ variant: 'white', disabled: true })}</div>
-    </>
+    <div className="flex">
+      <div className="space-x-4">{getVariants({ disabled: true })}</div>
+      <div className="space-x-4">{getVariants({ variant: 'secondary', disabled: true })}</div>
+      <div className="space-x-4">{getVariants({ variant: 'default', disabled: true })}</div>
+    </div>
   ))
   .add('Loading', () => (
     <div style={{ padding: 40 }}>

@@ -1,0 +1,1 @@
+export const NORMAL_COLORS = ['primary', 'secondary', 'success', 'warning', 'error'] as const;
