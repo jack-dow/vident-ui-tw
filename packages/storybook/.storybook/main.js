@@ -4,7 +4,10 @@ module.exports = {
   },
   stories: ['../../**/*.story.mdx', '../../**/*.story.@(ts|tsx)'],
   addons: [
+    'storybook-addon-turbo-build',
+    '@storybook/addon-outline',
     '@storybook/addon-a11y',
+    '@storybook/addon-viewport',
     {
       name: '@storybook/addon-postcss',
       options: {

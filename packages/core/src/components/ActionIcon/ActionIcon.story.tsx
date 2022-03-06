@@ -30,7 +30,7 @@ storiesOf('@vident-ui/core/ActionIcon', module).add('Test', () => (
   <div className="flex w-full justify-between">
     {NORMAL_COLORS.map((color) => (
       <div className="mt-4 space-y-2">
-        <Text className="capitalize">{color}</Text>
+        <Text className="select-none capitalize">{color}</Text>
         <div className="space-y-4">
           {variants.map((variant) => (
             <TestWrapper variant={variant} color={color} />
