@@ -1,8 +1,8 @@
-import React from 'react';
-import { SunIcon, MoonIcon } from '@heroicons/react/solid';
-import { ActionIcon, tw } from '@vident-ui/core';
-import { useDarkMode } from '@vident-ui/hooks';
-import './styles.css';
+const React = require('react');
+const { SunIcon, MoonIcon } = require('@heroicons/react/solid');
+const { ActionIcon, tw } = require('@vident-ui/core');
+const { useDarkMode } = require('@vident-ui/hooks');
+require('./styles.css');
 
 export const decorators = [
   (Story) => {

@@ -2,8 +2,9 @@ const colors = require('tailwindcss/colors');
 
 module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/demos/**/*.{js,ts,jsx,tsx}',
+    './src/pages/**/*.{ts,tsx}',
+    './src/components/**/*.{ts,tsx}',
+    './src/demos/**/*.{ts,tsx}',
     './node_modules/@vident-ui/**/*.{ts,tsx}',
   ],
   darkMode: 'class',
