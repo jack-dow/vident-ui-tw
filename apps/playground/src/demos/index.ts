@@ -1,2 +1,3 @@
-export * from './Box';
-export * from './Label';
+export * from './core/ActionIcon.demo';
+export * from './core/Box.demo';
+export * from './core/Label.demo';

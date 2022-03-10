@@ -2,6 +2,7 @@ export * from './types';
 export * from './utils';
 
 export * from './components/ActionIcon';
+export * from './components/Anchor';
 export * from './components/Box';
 export * from './components/Button';
 export * from './components/Input';
@@ -10,4 +11,5 @@ export * from './components/Label';
 export * from './components/Loader';
 export * from './components/PasswordInput';
 export * from './components/Switch';
+export * from './components/Text';
 export * from './components/TextInput';

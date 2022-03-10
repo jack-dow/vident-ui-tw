@@ -1,9 +1,11 @@
+import React, { useState } from 'react';
 import { set, tw } from '@vident-ui/core';
 import * as Accordion from '@radix-ui/react-accordion';
 import { ChevronRightIcon } from '@heroicons/react/solid';
 
+import { useStore } from '../../lib/store';
+import type { PlaygroundState } from '../../lib/store';
 import * as Demos from '../../demos';
-import { useState } from 'react';
 
 const navigation: any = {};
 
@@ -23,10 +25,61 @@ Object.entries(Demos).forEach((Demo) => {
   set(Component.displayName, navigation, Component, '/');
 });
 
-console.log(navigation);
+interface RenderItemsProps extends PlaygroundState {
+  child: { [key: string]: any };
+  expandedItems: string[];
+}
+
+function RenderItems({
+  child,
+  expandedItems,
+  activeComponentName,
+  ActiveComponent,
+  setActiveComponent,
+}: RenderItemsProps) {
+  if (typeof child === 'object') {
+    return (
+      <>
+        {Object.entries(child).map((item) => {
+          if (typeof item[1] === 'object') {
+            return (
+              <AccordionItem
+                key={item[0]}
+                value={item[0]}
+                label={item[0]}
+                open={expandedItems.includes(item[0])}
+              >
+                <RenderItems
+                  child={item[1]}
+                  expandedItems={expandedItems}
+                  activeComponentName={activeComponentName}
+                  ActiveComponent={ActiveComponent}
+                  setActiveComponent={setActiveComponent}
+                />
+              </AccordionItem>
+            );
+          } else {
+            return (
+              <ChildButton
+                key={item[0]}
+                onClick={() => setActiveComponent(item[0], item[1])}
+                selected={activeComponentName === item[0]}
+              >
+                {item[0]}
+              </ChildButton>
+            );
+          }
+        })}
+      </>
+    );
+  }
+
+  return <div>Not valid</div>;
+}
 
 export const Navbar = () => {
-  const [expandedItems, setExpandedItems] = useState(['item-1']);
+  const [expandedItems, setExpandedItems] = useState(['@vident-ui', 'core']);
+  const state = useStore();
 
   return (
     <div className="hidden h-full bg-white p-4 shadow md:flex md:w-64 md:flex-col">
@@ -42,15 +95,7 @@ export const Navbar = () => {
             setExpandedItems(updatedState);
           }}
         >
-          <AccordionItem value="item-1" label="Test 1" open={expandedItems.includes('item-1')}>
-            <ChildButton>Test child 1</ChildButton>
-            <AccordionItem value="item-3" label="Test 3" open={expandedItems.includes('item-3')}>
-              <ChildButton>Test child 3</ChildButton>
-            </AccordionItem>
-          </AccordionItem>
-          <AccordionItem value="item-2" label="Test 2" open={expandedItems.includes('item-2')}>
-            <ChildButton>Test child 2</ChildButton>
-          </AccordionItem>
+          <RenderItems child={navigation} expandedItems={expandedItems} {...state} />
         </Accordion.Root>
       </div>
     </div>
@@ -65,7 +110,7 @@ interface CollapsibleButtonProps extends Accordion.AccordionItemProps {
 
 function AccordionItem({ children, label, open, ...props }: CollapsibleButtonProps) {
   return (
-    <Accordion.Item {...props}>
+    <Accordion.Item {...props} className="space-y-1">
       <Accordion.Header className="flex">
         <Accordion.Trigger
           className={tw(
@@ -84,20 +129,23 @@ function AccordionItem({ children, label, open, ...props }: CollapsibleButtonPro
           {label}
         </Accordion.Trigger>
       </Accordion.Header>
-      <Accordion.Content className="space-y-1 px-4">{children}</Accordion.Content>
+      <Accordion.Content className="space-y-1 px-2">{children}</Accordion.Content>
     </Accordion.Item>
   );
 }
 
-interface ChildButtonProps {
-  children?: React.ReactNode;
-}
+type ChildButtonProps = JSX.IntrinsicElements['button'] & { selected: boolean };
 
-function ChildButton({ children }: ChildButtonProps) {
+function ChildButton({ children, selected, ...props }: ChildButtonProps) {
   return (
     <button
+      {...props}
+      disabled={selected}
       type="button"
-      className="group flex w-full items-center rounded-md py-2 px-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+      className={tw(
+        selected ? 'bg-gray-100 text-gray-900' : 'hover:bg-gray-50 hover:text-gray-900',
+        'group flex w-full items-center rounded-md py-2 px-2 text-sm font-medium text-gray-600'
+      )}
     >
       {children}
     </button>

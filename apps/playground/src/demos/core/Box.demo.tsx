@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Box } from '@vident-ui/core';
 
-export const BoxDemo = () => {
+export const BasicDemo = () => {
   const ref = useRef(null);
   useEffect(() => {
     console.log(ref);
@@ -19,4 +19,4 @@ export const BoxDemo = () => {
   );
 };
 
-BoxDemo.displayName = '@vident-ui/core/Box';
+BasicDemo.displayName = '@vident-ui/core/Box';

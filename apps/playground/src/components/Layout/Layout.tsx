@@ -1,9 +1,14 @@
 import { Navbar } from './Navbar';
 
-export const Layout = () => {
+interface LayoutProps {
+  children?: React.ReactElement;
+}
+
+export const Layout = ({ children }: LayoutProps) => {
   return (
-    <>
+    <div className="flex h-full">
       <Navbar />
-    </>
+      {children}
+    </div>
   );
 };

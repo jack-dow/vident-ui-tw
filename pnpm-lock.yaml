@@ -63,6 +63,7 @@ importers:
       react-dom: ^17.0.2
       tailwindcss: ^3.0.23
       typescript: ^4.5.4
+      zustand: ^3.7.1
     dependencies:
       '@radix-ui/react-accordion': 0.1.6_react@17.0.2
       '@vident-ui/core': link:../../packages/core
@@ -70,6 +71,7 @@ importers:
       next: 12.1.0_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
+      zustand: 3.7.1_react@17.0.2
     devDependencies:
       '@heroicons/react': 1.0.5_react@17.0.2
       '@types/node': 17.0.18
@@ -13505,6 +13507,18 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zustand/3.7.1_react@17.0.2:
+    resolution: {integrity: sha512-wHBCZlKj+bg03/hP+Tzv24YhnqqP8MCeN9ECPDXoF01062SIbnfl3j9O0znkDw1lNTY0a8WN3F///a0UhhaEqg==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      react: '>=16.8'
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      react: 17.0.2
+    dev: false
 
   /zwitch/1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
